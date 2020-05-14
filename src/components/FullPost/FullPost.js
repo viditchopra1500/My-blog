@@ -11,14 +11,15 @@ class FullPost extends Component {
     }
 
     componentDidUpdate () {
-        console.log(this.props.id,this.state.loadedPost,this.state.id1)
+        // console.log(this.props.id,this.state.loadedPost,this.state.id1)
         if ( !this.state.loadedPost || (this.state.loadedPost && this.state.id1 !== this.props.id)) {
                 axios.get( '/threads.json' )
                     .then( response => {
                         var key=this.props.id;
                         var data=Object.entries(response.data);
                         var found=data.find((post=>(post[0]===key)))
-                        console.log(found[0])
+                        // console.log(found[0])
+                        if(found)
                         this.setState( { loadedPost: found[1],id1:found[0] } );
                     } ).catch(e=>console.log(e));
         }

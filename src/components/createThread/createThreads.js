@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField'
 import './createThreads.css'
 import axios from './axios-threads';
+import { Button } from "@material-ui/core";
 
 
 
@@ -52,8 +53,6 @@ class createThreads extends Component {
       // console.log(this.state.title);
       this.setState({title:event.target.value}) 
    }
-
-
     render() {
         return (
           <div className="editorContainer">
@@ -70,7 +69,7 @@ class createThreads extends Component {
               }}
              />
               <div className="submit">
-             <button type="button" class="btn btn-outline-primary" onClick={this.submit}>Submit</button>
+             <Button  type="button" class="btn btn-outline-primary" onClick={this.submit}>Submit</Button>
              </div>
              </div>
         )
