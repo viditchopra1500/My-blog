@@ -1,7 +1,7 @@
 My first fullstack project .
 Its a blog application which uses WYSIWYG editors.
 
-But its completely more than that , I have used react.js to implement rich design and used CK editor for developing the rich text editor.
+But its more than that , I have used react.js to implement rich design and used CK editor for developing the rich text editor.
 
 Concepts used->
 1)routing - used routing to move from one page to another.
