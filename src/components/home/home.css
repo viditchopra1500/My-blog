@@ -1,0 +1,6 @@
+.homePage{
+    display: flex;
+    justify-content: flex-end;
+    padding: 50px;
+    margin-right: 100px;
+}
