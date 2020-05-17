@@ -3,6 +3,8 @@ import axios from './../createThread/axios-threads';
 import FullPost from './../FullPost/FullPost'
 import Post from './post';
 import './threads.css';
+
+//Its job is to take  all the blogs from backend and render them.  
 class Blog extends Component {
     state = {
         posts: [],
@@ -17,7 +19,7 @@ class Blog extends Component {
                 const data = Object.values(response.data);
                 const keys=Object.keys(response.data);
                 const updatedPosts = data.map((post,i) => {
-                    post.id=keys[i];
+                    post.id=keys[i];                           //giving another attribute(id) to the post elements of data.
                     return {
                         ...post
                     }
@@ -40,10 +42,10 @@ class Blog extends Component {
         let posts = <p style={{textAlign: 'center'}}>Something went wrong!</p>;
         if (!this.state.error) {
             posts = this.state.posts.map(post => {
-                return <Post 
+                return <Post                                              //As post is a dynamic component so we make a separate component for it.
                     key={post.id} 
                     title={post.title} 
-                    clicked={() => this.postSelectedHandler(post.id)} />;
+                    clicked={() => this.postSelectedHandler(post.id)} />;  //when you need to send a data to the fxn thats how to write it when calling from here.
             });
         }
 

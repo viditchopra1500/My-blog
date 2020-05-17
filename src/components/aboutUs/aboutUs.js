@@ -5,7 +5,7 @@ class aboutus extends Component {
         return(
             <div className="page">
                 <h1 className="display-1 text-center content">Express Yourself</h1>
-               <blockquote className="blockquote text-center content h1">
+               <blockquote className="blockquote text-center h1">
                We made it really easy to post anything while remaining completely anonymous the entire time.
                </blockquote>
                <blockquote className="blockquote text-center">

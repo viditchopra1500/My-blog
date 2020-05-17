@@ -7,7 +7,7 @@ import './FullPost.css';
 class FullPost extends Component {
     state = {
         loadedPost: null,
-        id1:null
+        id1:null                       //to store the id of loaded post and it checks the if the previous id is diff from new one then only render.
     }
 
     componentDidUpdate () {
@@ -25,12 +25,6 @@ class FullPost extends Component {
         }
     }
 
-    deletePostHandler = () => {
-        axios.delete('/threads/' + this.props.id)
-            .then(response => {
-                console.log(response);
-            });
-    }
 
     render () {
         let post = <p style={{ textAlign: 'center' }}>Please select a Post!</p>;
@@ -41,16 +35,6 @@ class FullPost extends Component {
             post=<div className="FullPost">
                 {parse(this.state.loadedPost.content)}
                 </div>
-            // post = (
-            //     <div className="FullPost">
-            //         <h1>{this.state.loadedPost.title}</h1>
-            //         <p>{this.state.loadedPost.content}</p>
-            //         <div className="Edit">
-            //             <button onClick={this.deletePostHandler} className="Delete">Delete</button>
-            //         </div>
-            //     </div>
-
-            // );
         }
         return post
     }

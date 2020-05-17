@@ -8,20 +8,10 @@ import { Button } from "@material-ui/core";
 
 
 class createThreads extends Component {
-    constructor(props) {
-        super(props);
-        this.updateContent = this.updateContent.bind(this);
-        this.state = {
+      state = {
             content: 'content',
             title:''
         }
-    }
-
-    updateContent=(newContent)=> {
-        this.setState({
-            content: newContent
-        })
-    }
     
     onChange=(evt)=>{
       // console.log("onChange fired with event info: ", evt);
@@ -31,20 +21,11 @@ class createThreads extends Component {
           content: newContent
       })
     }
-    
-    onBlur=(evt)=>{
-      console.log("onBlur event called with event info: ", evt);
-    }
-    
-    afterPaste=(evt)=>{
-      console.log("afterPaste event called with event info: ", evt);
-    }
-
     submit=()=>{
       const obj={title:this.state.title,content:this.state.content};
-      console.log(obj);
-      axios.post('/threads.json',obj).then(res=>{
-        console.log('success');
+      axios.post('/threads.json',obj).then(res=>{             //posting data to firebase
+        alert('Your post is successfully posted')
+        this.setState({title:'',content:''})
       }).catch((e)=>{
         console.log('error occured',e);
       })
@@ -57,7 +38,7 @@ class createThreads extends Component {
         return (
           <div className="editorContainer">
           <div className="textfield">
-          <TextField id="outlined-basic" label="Title" variant="outlined" onChange={this.handleChange} />
+          <TextField id="outlined-basic" label='Title' variant="outlined" value={this.state.title} onChange={this.handleChange} />
           </div>
             <CKEditor 
               activeClass="p10" 

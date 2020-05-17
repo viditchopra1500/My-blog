@@ -9,7 +9,7 @@ class home extends Component {
             <div className="homePage">
                 <div className="jumbotron">
   <h1 className="display-4">Hello, world!</h1>
-  <p className="lead">Hola amigos you are now officially in the territory of Vidit aka Limbo462!!</p>
+  <p className="lead">Hola amigos you are now officially in the territory of Vidit  aka  Limbo462!!</p>
   <hr className="my-4"/>
   <p>To learn more about this project ----></p>
   

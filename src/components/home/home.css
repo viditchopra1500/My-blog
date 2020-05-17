@@ -1,4 +1,6 @@
 .homePage{
+    font-family: Yellowtail-regular;
+    font-size: 30px;
     display: flex;
     justify-content: flex-end;
     padding: 50px;
